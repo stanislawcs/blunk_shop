@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+:Администратор: as Admin
+:Пользователь: as User
+(Авторизация в приложении) as (Authorization)
+(Сделать заказ) as (Ordering)
+(Настройка профиля) as (Profile)
+(Смена логина и пароля) as (InformationChanging)
+(Добавление товара в корзину) as (AddToCart)
+(Добавление товара) as (AddItem)
+(Удаление товара) as (DeleteItem)
+(Просмотр товаров) as (ItemsWatching)
+(Выбрать размер) as (ChooseSize)
+(Выбрать цвет) as (ChooseColor)
+(Добавить в избранное) as (AddToFavorites)
+
+
+User --> (Authorization)
+Admin ---> (Authorization)
+
+User --> (Ordering)
+Admin --->(Ordering)
+
+User --> (Profile)
+Admin ---> (Profile)
+
+User --> (AddToCart)
+Admin ---> (AddToCart)
+
+Admin ---> (AddItem)
+Admin ---> (DeleteItem)
+
+Admin ---> (ItemsWatching)
+User --> (ItemsWatching)
+
+
+(ItemsWatching) --> (ChooseColor)
+(ItemsWatching) --> (ChooseSize)
+(ItemsWatching) --> (AddToFavorites)
+
+(Profile) --> (InformationChanging)
+
+@enduml
