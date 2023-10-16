@@ -35,10 +35,10 @@ Admin ---> (ItemsWatching)
 User --> (ItemsWatching)
 
 
-(ItemsWatching) --> (ChooseColor)
-(ItemsWatching) --> (ChooseSize)
-(ItemsWatching) --> (AddToFavorites)
+(ItemsWatching) -[dotted]-> (ChooseColor):imports
+(ItemsWatching) -[dotted]-> (ChooseSize):imports
+(ItemsWatching) -[dotted]-> (AddToFavorites):imports
 
-(Profile) --> (InformationChanging)
+(Profile) -[dotted]-> (InformationChanging):imports
 
 @enduml
