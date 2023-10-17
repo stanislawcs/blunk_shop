@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:Отображение стартового экрана;
+if (Пользователь имеет профиль?) then (yes)
+:Форма авторизации;
+repeat
+:Ввод логина и пароля;
+:Нажатие кнопки "Log In";
+repeat while(Проверка введенных данных) is (false)
+   -> true;
+   :Переход на главную страницу сайта;
+stop
+
+else(no)
+:Форма регистрации;
+repeat
+:Ввод данных регистрации;
+:Нажатие кнопки "Sign In";
+repeat while(Валидация прошла успешно?) is(false)
+->true;
+stop
+@enduml
