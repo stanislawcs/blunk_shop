@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+
+:Открытие окна настроек пользователя;
+repeat
+:Заполение полей;
+:Нажатие на кнопку "Save";
+repeat while(Проверка на введенныые данные) is (false)
+-> (true);
+:Внесение изменений в профиль;
+
+stop
+
+@enduml

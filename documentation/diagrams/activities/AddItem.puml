@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:Администратор нажимает на кнопку "Add Item";
+repeat
+:Заполенение шаблона товара;
+repeat while (Проверка на введенные данные) is (false)
+ ->true;
+:Просмотр получившегося товара;
+:Нажатие на кнопку "Ok";
+:Добавление заметки;
+stop
+
+@enduml

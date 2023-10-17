@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:Администратор нажимает на выбранный товар;
+:Нажатие на кнопку "Delete Item";
+:Удаление товара из списка;
+stop
+
+@enduml

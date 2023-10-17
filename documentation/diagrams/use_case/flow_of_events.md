@@ -1,7 +1,7 @@
 # Поток событий
 ---
 
-![UseCase](../diagrams/images/UseCaseDiagram.png)
+![UseCase](images/UseCaseDiagram.png)
 
 # Содержание
 1 [Актёры](#1) <br>
