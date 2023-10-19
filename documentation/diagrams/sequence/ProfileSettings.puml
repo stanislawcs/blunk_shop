@@ -1,0 +1,24 @@
+@startuml
+skinparam sequence{
+ParticipantPadding 30
+MessageAlign center
+}
+
+Actor Пользователь as User
+participant "Главное окно" as mainWindow
+participant "Окно настроек" as settingsWindow
+
+User -> mainWindow: 1: Нажатие кнопки "Settings"
+mainWindow --> settingsWindow: 1.1: Открытие окна
+settingsWindow -> User: 2: Отображение окна
+User-> settingsWindow: 2.1: Заполнение полей
+settingsWindow-> settingsWindow: 2.1.1: Проверка введенных данных
+group alt
+settingsWindow->User: 2.1.2: Ожидание действия
+User -> settingsWindow:2.1.2.1: Нажатие на кнопку "Save"
+settingsWindow -> mainWindow: 2.1.2.1.1: Изменение данных пользователя
+User -> settingsWindow: 2.1.2.2: Нажатие на кнопку "Save"
+settingsWindow -> mainWindow: 2.1.2.2.1: Сообщение о неверно введенных данных
+end
+
+@enduml

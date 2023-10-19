@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam sequence{
+ParticipantPadding 30
+MessageAlign center
+}
+
+Actor "Администратор" as Admin
+participant "Главное окно" as mainWindow
+participant "Окно шаблона" as patternWindow
+
+Admin -> mainWindow: 1: Нажатие кнопки "Add Item"
+mainWindow --> patternWindow: 1.1: Создание
+patternWindow -> Admin: 2: Отображение окна
+Admin -> patternWindow: 2.1: Заполнение полей шаблона
+group
+Admin -> patternWindow: 2.2 Нажатие кнопки "Ok"
+patternWindow -> patternWindow: 2.2.1: Проверка на введенные данные
+group alt
+patternWindow -> Admin: 2.2.2: Сообщение о незаполненных полях
+patternWindow -> mainWindow: 2.2.3: Добавление товара
+end
+
+Admin-> patternWindow: 2.2.2.1: Нажатие кнопки "Back"
+patternWindow -> mainWindow: 2.2.2.2: Товар не добавлен
+end
+@enduml

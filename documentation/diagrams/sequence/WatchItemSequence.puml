@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+skinparam sequence{
+ParticipantPadding 30
+MessageAlign center
+}
+
+Actor Администатор as Admin
+participant "Главное окно" as mainWindow
+participant "Окно просмотра товара" as itemWindow
+
+Admin -> mainWindow: 1: Выбор товара из списка. Нажатие на его изображение
+mainWindow -> itemWindow: 1.1: Открытие окна
+itemWindow -> Admin: 2: Отображение окна
+
+group parameters
+Admin -> itemWindow: 3: Выбор цвета
+Admin -> itemWindow: 4. Выбор размера
+
+Admin -> itemWindow: 5. Нажатие кнопки "Cancel"
+itemWindow -> mainWindow: 5.1 Закрытие окна просмотра
+end
+
+@enduml

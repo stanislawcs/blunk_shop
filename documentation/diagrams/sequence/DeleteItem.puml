@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam sequence{
+ParticipantPadding 30
+MessageAlign center
+}
+
+Actor Администратор as Admin
+participant "Главное окно" as mainWindow
+participant "Окно просмотра товара" as itemWindow
+
+Admin -> mainWindow: 1: Выделение товара. Нажатие кнопки "Delete Item"
+mainWindow --> itemWindow: 1.1: Открытие товара
+itemWindow -> Admin: 2: Оторажение окна
+
+group alt
+Admin -> itemWindow: 3: Нажатие кнопки "Delete"
+itemWindow -> mainWindow: 3.1: Удаление товара
+Admin -> itemWindow: 4: Нажатие кнопки "Cancel"
+itemWindow->mainWindow: 4.1: Закрытие окна просмотра
+end
+
+@enduml

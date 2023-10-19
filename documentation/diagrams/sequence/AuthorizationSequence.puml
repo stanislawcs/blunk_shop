@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+skinparam{
+Maxmessagesize 200
+}
+
+skinparam sequence{
+ParticipantPadding 30
+MessageAlign center
+}
+
+participant "Пользователь" as User
+participant "Стартовое окно" as startWindow
+participant "Окно авторизации" as authorizationWindow
+participant "Окно регистрации" as registrationWindow
+participant "Главное окно" as mainWindow
+
+User -> startWindow: 1: Запуск приложения
+authorizationWindow -> User:1.1: Отображение окна
+registrationWindow -> User:2: Отображение окна
+User -> authorizationWindow:2.1: Ввод логина и пароля. Нажатие кнопки "Log In".
+authorizationWindow -> authorizationWindow:2.1.1: Проверка введенных данных
+User -> registrationWindow: 2.2: Ввод логина, пароля, реферального кода. Нажатие кнопки "Sign In".
+registrationWindow-> registrationWindow: 2.2.1: Проверка введенных данных
+group application
+authorizationWindow --> mainWindow: 2.1.2: Верный ввод данных
+mainWindow->User: 3.1: Отображение окна
+registrationWindow --> mainWindow: 2.2.2: Верный ввод данных
+mainWindow -> User:3.2: Отображение окна
+User -> authorizationWindow:3.3: Очистка полей
+User -> authorizationWindow:3.4: Повторный ввод данных
+User -> registrationWindow: 3.5: Очистка полей
+User -> authorizationWindow:3.6: Повторный ввод данных
+end
+@enduml
