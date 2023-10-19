@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+scale 350 width
+[*] --> MainWindow
+
+state MainWindow {
+  [*] --> ItemWindow: Choice
+}
+
+state ItemWindow {
+[*] --> PatternWindow
+[*] --> Color
+[*] --> Size
+}
+@enduml

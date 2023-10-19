@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+scale 350 width
+[*] --> MainWindow
+
+state MainWindow {
+  [*] --> Profile: Options
+}
+
+state Profile{
+[*] --> settings
+settings --> data :change
+}
+
+@enduml

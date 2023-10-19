@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/state-diagram
+
+scale 350 width
+[*] --> MainWindow
+
+state MainWindow {
+  [*] --> AuthorizationWindow: Validation
+  [*] --> RegistrationWindow: Validation
+}
+
+state AuthorizationWindow {
+}
+
+state RegistrationWindow{
+}
+
+@enduml
