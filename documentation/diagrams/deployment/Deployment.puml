@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/deployment-diagram
+
+rectangle Browser
+node "Computer display/monitor"
+rectangle PostgreSQL
+
+"Computer display/monitor" - Browser
+
+Browser - PostgreSQL
+
+@enduml
