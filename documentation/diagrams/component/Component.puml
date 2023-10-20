@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+package "GUI" {
+   [StartWindow]-[dotted]-> [RestorePasswordWindow]
+   [StartWindow]-[dotted]-> [LoginWindow]
+   [StartWindow]-[dotted]-> [RegistrationWindow]
+   [RegistrationWindow] -[dotted]-> [LoginWindow]
+   [RestorePasswordWindow] -[dotted]-> [LoginWindow]
+   [RegistrationWindow] -[dotted]-> [OkForm]
+   [LoginWindow] -[dotted]->[MainWindow]
+   [MainWindow] -[dotted]-> [ShowItemWindow]
+   [MainWindow] -[dotted]->[ProfileWindow]
+   [MainWindow] -[dotted]-> [CartWindow]
+   [MainWindow] -[dotted]-> [OrderWindow]
+}
+
+package "Application" {
+  [Program]
+}
+
+
+database "PostgreSQL" {
+[Users] -[dotted]-> [Carts]
+[Users] -[dotted]-> [Orders]
+[Brand] -[dotted]-> [Models]
+[Models] -[dotted]-> [Shoes]
+[Shoes] -[dotted]-> [Sizes]
+[Shoes] -[dotted]-> [Colors]
+}
+
+
+[GUI] -[dotted]-> [Application]:HTTP
+[Application] -[dotted]-> [GUI]:HTTP
+[Application] -[dotted]-> [PostgreSQL]
+[PostgreSQL] -[dotted]->[Application]
+@enduml
