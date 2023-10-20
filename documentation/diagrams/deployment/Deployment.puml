@@ -1,12 +1,25 @@
 @startuml
 'https://plantuml.com/deployment-diagram
 
-rectangle Browser
-node "Computer display/monitor"
-rectangle PostgreSQL
 
+skinparam{
+FileAlign top right
+MessageAlign center
+}
+
+node "Computer (Windows 10)"{
+artifact Browser
+node "Computer display/monitor"
+
+node Server
+
+artifact PostgreSQL
 "Computer display/monitor" - Browser
 
-Browser - PostgreSQL
+Browser - Server
+
+Server - PostgreSQL
+}
+
 
 @enduml
