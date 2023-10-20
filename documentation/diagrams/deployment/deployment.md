@@ -1,4 +1,4 @@
 # Диаграмма развертывания
 ---
 
-![Диграмма развёртывания](images/Deployment.png)
+![Диграмма развёртывания](images/DeploymentDiagram.png)
